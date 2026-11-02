@@ -5,7 +5,7 @@ import threading
 HOST = "127.0.0.1"
 PORT = 60000
 
-table = {"calculator_udp":(HOST, 60001), "calculator_tcp":(HOST, 60002),"date_udp":(HOST, 60003), "date_tcp": (HOST, 60004)}
+table = {"calculator_udp":(HOST, 60001), "calculator_tcp":(HOST, 60002)}
 
 def Get(mensage) :
     if len(mensage)!= 2:
