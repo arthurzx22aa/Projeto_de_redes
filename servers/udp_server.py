@@ -36,14 +36,14 @@ def Handle(sock, data, addr):
 
 def main():
 
-    name_server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    name_server.bind((HOST, PORT))
+    server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    server.bind((HOST, PORT))
     print(f"Servidor de serviço UDP em {HOST}:{PORT}")
     while True:
-        data, addr = name_server.recvfrom(1024)
+        data, addr = server.recvfrom(1024)
         
         if data:
-            threading.Thread(target=Handle, args=(name_server, data, addr)).start()
+            threading.Thread(target=Handle, args=(server, data, addr)).start()
         else:
             print("nenhum dado recebido de", addr)
 
